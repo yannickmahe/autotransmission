@@ -1,0 +1,45 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "f5672e1e8dd6a8c1589256b8acfd44fa",
+    "packages": [
+        {
+            "name": "brycied00d/PHP-Transmission-Class",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yannickmahe/PHP-Transmission-Class.git",
+                "reference": "6cdad91efa6ff941ea6177368e552b3af1e7b65b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yannickmahe/PHP-Transmission-Class/zipball/6cdad91efa6ff941ea6177368e552b3af1e7b65b",
+                "reference": "6cdad91efa6ff941ea6177368e552b3af1e7b65b",
+                "shasum": ""
+            },
+            "type": "library",
+            "support": {
+                "source": "https://github.com/yannickmahe/PHP-Transmission-Class/tree/master"
+            },
+            "time": "2013-05-21 20:59:50"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "brycied00d/php-transmission-class": 20
+    },
+    "platform": {
+        "php": ">=5.3.3"
+    },
+    "platform-dev": [
+
+    ]
+}

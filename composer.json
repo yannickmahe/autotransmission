@@ -1,0 +1,13 @@
+{
+	"name": "yannickmahe/autotransmission",
+	"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/yannickmahe/PHP-Transmission-Class.git"
+        }
+    ],
+	"require": {
+    	"php": ">=5.3.3",
+    	"brycied00d/PHP-Transmission-Class": "dev-master"
+	}
+}

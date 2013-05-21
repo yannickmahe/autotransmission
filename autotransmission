@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+if(!in_array($argv[1], array('close','notify'))){
+	die("Command should be either close or notify\n");
+}
+
+require('config/config.php');
+require 'vendor/autoload.php';
+
+require('commands/'.$argv[1].'.php');

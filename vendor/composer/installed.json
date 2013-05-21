@@ -1,0 +1,24 @@
+[
+    {
+        "name": "brycied00d/PHP-Transmission-Class",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yannickmahe/PHP-Transmission-Class.git",
+            "reference": "6cdad91efa6ff941ea6177368e552b3af1e7b65b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yannickmahe/PHP-Transmission-Class/zipball/6cdad91efa6ff941ea6177368e552b3af1e7b65b",
+            "reference": "6cdad91efa6ff941ea6177368e552b3af1e7b65b",
+            "shasum": ""
+        },
+        "time": "2013-05-21 20:59:50",
+        "type": "library",
+        "installation-source": "source",
+        "support": {
+            "source": "https://github.com/yannickmahe/PHP-Transmission-Class/tree/master"
+        }
+    }
+]
