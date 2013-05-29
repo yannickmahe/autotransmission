@@ -8,6 +8,7 @@
     ],
 	"require": {
     	"php": ">=5.3.3",
-    	"brycied00d/PHP-Transmission-Class": "dev-master"
+    	"brycied00d/PHP-Transmission-Class": "dev-master",
+        "swiftmailer/swiftmailer": "5.1.*@dev"
 	}
 }

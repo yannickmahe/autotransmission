@@ -14,10 +14,10 @@ class Autotransmission{
 		$completes = $this->getCompleteDownloads();
 
 		foreach ($completes as $torrent) {
-			$file = $this->getFilePath($torrent->id);
+			$files = $this->getFilePath($torrent->id);
 			$this->closeDownload($torrent->id);
-			$url = $this->addToSite($file);
-			$this->notifyAddedToSite($file,$url);
+			$url = $this->addToSite($files);
+			$this->notifyAddedToSite($files,$url);
 		}
 	}
 
@@ -39,20 +39,38 @@ class Autotransmission{
 		return $return;
 	}
 
-	private function addToSite($file){
+	private function addToSite($files){
+		$urls = array();
+		foreach($files as $file){
+			$command = "php ".SITE_ROOT.DIRECTORY_SEPARATOR."app/console shv:video:add --remove $file";
+			exec($command, $output);
+			$id = $this->parseId($output);
+			$url = SITE_URL.'video/'.$id;
+		}
 
+		return $urls;
 	}
 
 	private function closeDownload($id){
 		$this->rpc->remove($id);
 	}
 
-	private function notifyAddedToSite($file,$url){
-
+	private function notifyAddedToSite($file,$urls){
+		//TODO
 	}
 
-	private function getFilePath($id){
+	private function getFilePaths($id){
+		//TODO
+	}
 
+	private function parseId($output){
+		foreach ($output as $line) {
+			if(strpos('n°', $line) !== false){
+				$line = str_replace("Video n° ", '', $line);
+				$line = str_replace(" has been added", '', $line);
+				return $line;
+			}
+		}
 	}
 
 }
