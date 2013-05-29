@@ -1,6 +1,7 @@
 <?php
 
 require_once('vendor/brycied00d/PHP-Transmission-Class/class/TransmissionRPC.class.php');
+require_once('vendor/swiftmailer/swiftmailer/lib/swift_required.php');
 
 class Autotransmission{
 
@@ -56,7 +57,41 @@ class Autotransmission{
 	}
 
 	private function notifyAddedToSite($file,$urls){
-		//TODO
+
+
+		$body = "New video added to site.";
+		foreach($urls as $url){
+			$body .= '<br />'.$url;
+		}
+
+		// Create the Transport
+		$transport = Swift_SmtpTransport::newInstance(SMTP_SERVER, SMTP_PORT)
+		  ->setUsername(SMTP_LOGIN)
+		  ->setPassword(SMTP_PASSWORD)
+		  ;
+
+		/*
+		You could alternatively use a different transport such as Sendmail or Mail:
+
+		// Sendmail
+		$transport = Swift_SendmailTransport::newInstance('/usr/sbin/sendmail -bs');
+
+		// Mail
+		$transport = Swift_MailTransport::newInstance();
+		*/
+
+		// Create the Mailer using your created Transport
+		$mailer = Swift_Mailer::newInstance($transport);
+
+		// Create a message
+		$message = Swift_Message::newInstance('New videao added to site')
+		  ->setFrom(array('john@doe.com' => 'Videos'))
+		  ->setTo(array(NOTIFICATION_RECIPIENT))
+		  ->setBody($body)
+		  ;
+
+		// Send the message
+		$result = $mailer->send($message);
 	}
 
 	private function getFilePaths($id){
